@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "hydra_db_connection",
+            "database": "hydra_db",
+            "username": "metanmai",
+            "password": ""
+        }
+    ]
+}
