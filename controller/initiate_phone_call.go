@@ -5,9 +5,13 @@ import (
 	"hydra/response"
 
 	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 )
 
 func InitiatePhoneCall(ctx *gin.Context) {
+	var log *logrus.Entry
+	var ok bool
+
 	var requestBody struct {
 		PhoneNumber string `json:"phone_number" binding:"required"`
 	}
@@ -16,7 +20,16 @@ func InitiatePhoneCall(ctx *gin.Context) {
 		return
 	}
 
-	fmt.Printf("Initiating phone call to %s\n", requestBody.PhoneNumber)
+	logger, _ := ctx.Get("logger")
+    if log, ok = logger.(*logrus.Entry); !ok {
+        fmt.Println("Logger not found in context")
+		return
+    } 
+
+	log.WithFields(logrus.Fields{
+		"phone_number": requestBody.PhoneNumber,
+	}).Info("Initiating phone call")
+
 
 	response.GenericApiResponse(ctx, "Phone call initiated successfully", 200, nil)
 }

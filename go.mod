@@ -4,6 +4,7 @@ go 1.24
 
 require (
 	github.com/gin-gonic/gin v1.6.3
+	github.com/sirupsen/logrus v1.9.3
 	gorm.io/driver/postgres v1.5.11
 	gorm.io/gorm v1.25.10
 )
@@ -30,7 +31,7 @@ require (
 	github.com/ugorji/go/codec v1.2.4 // indirect
 	golang.org/x/crypto v0.17.0 // indirect
 	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/sys v0.26.0 // indirect
+	golang.org/x/sys v0.32.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

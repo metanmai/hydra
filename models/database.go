@@ -27,7 +27,5 @@ func SetupDatabase() {
         panic("Could not open database connection")
     }
 
-    db.AutoMigrate(&User{})
-
     DB = db
 }
