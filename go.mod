@@ -1,4 +1,4 @@
-module github.com/henvo/golang-gin-gorm-starter
+module hydra
 
 go 1.24
 

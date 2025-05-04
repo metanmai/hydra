@@ -2,15 +2,13 @@ package models
 
 import (
     "fmt"
-    "github.com/henvo/golang-gin-gorm-starter/helper"
+    "hydra/helper"
     "gorm.io/driver/postgres"
     "gorm.io/gorm"
 )
 
-// DB is the database connection.
 var DB *gorm.DB
 
-// SetupDatabase migrates and sets up the database.
 func SetupDatabase() {
     u := helper.GetEnv("POSTGRES_USER", "metanmai")
     // p := helper.GetEnv("POSTGRES_PASSWORD", "")
@@ -29,9 +27,7 @@ func SetupDatabase() {
         panic("Could not open database connection")
     }
 
-    // Migrate the schema (add any models you want to migrate here).
     db.AutoMigrate(&User{})
 
-    // Set the global DB variable
     DB = db
 }

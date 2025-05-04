@@ -1,12 +1,12 @@
 package main
 
 import (
-	"github.com/henvo/golang-gin-gorm-starter/models"
-	"github.com/henvo/golang-gin-gorm-starter/routes"
+	"hydra/models"
+	"hydra/routes"
 )
 
 func main() {
 	r := routes.SetupRouter()
 	models.SetupDatabase()
-	r.Run()
+	r.Run("0.0.0.0:8080")
 }
